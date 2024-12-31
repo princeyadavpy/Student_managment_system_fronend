@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    padding: 20px;
+}
+
+.student-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th, .attendance-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.attendance-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.status-good {
+    background-color: #c2eecc;
+}
+
+.status-average {
+    background-color: #f7e7b3;
+}
+
+.status-poor {
+    background-color: #f5a5ac;
+}
+
+.summary {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.action-buttons {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.action-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.action-buttons button:hover {
+    background-color: #0056b3;
+}

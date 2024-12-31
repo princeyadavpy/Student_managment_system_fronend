@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_atten.css">
+    <title>Attendance_Sheet</title>
+</head>
+<body bgcolor="">
+    <div class="header">
+    <h1>Student Attendance Record</h1>
+    </div>
+
+    <div class="container">
+        <div class="student-info">
+            <div><strong>Student Name:</strong> Prince Yadav</div>
+            <div><strong>Student ID:</strong> GF202343931</div>
+        </div>
+
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Total Classes</th>
+                    <th>Classes Attended</th>
+                    <th>Attendance (%)</th>
+                    <th>Last Attended Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hindi</td>
+                    <td>30</td>
+                    <td>21</td>
+                    <td>93%</td>
+                    <td>2024-10-10</td>
+                </tr>
+                <tr>
+                    <td>Mathematics</td>
+                    <td>30</td>
+                    <td>23</td>
+                    <td>93%</td>
+                    <td>2024-10-10</td>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td>30</td>
+                    <td>22</td>
+                    <td>73%</td>
+                    <td>2024-10-08</td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>50%</td>
+                    <td>2024-10-05</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <div class="summary">
+            Overall Attendance: 72% - <span style="color: red;">Needs Improvement</span>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="window.print()">Print</button>
+            <button id="export-pdf">Export to PDF</button>
+            <button id="export-excel">Export to Excel</button>
+        </div>
+    </div>
+
+    <script src="script_atten.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Portal</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Portal</h1>
+    <p>Select a subject to start the quiz:</p>
+
+    <div class="form-group">
+      <select id="subject">
+        <option value="">-- Select Subject --</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+      </select>
+      <button id="startQuiz">Start Quiz</button>
+    </div>
+
+    <div id="quizSection" class="hidden">
+      <h2 id="quizTitle"></h2>
+      <div id="questionContainer">
+        <p id="question"></p>
+        <div id="options"></div>
+      </div>
+      <button id="nextQuestion" class="hidden">Next</button>
+      <div id="result" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

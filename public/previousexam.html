@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Previous Year Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fef8e8;
+        }
+        header {
+            background-color: #637F8C;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .container h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .container p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .search-box {
+            margin: 20px 0;
+        }
+        .search-box input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .search-box button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #ffc107;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="time" id="time"></div>
+                <div class="user">
+                    <img src="https://via.placeholder.com/30" alt="User Avatar">
+                    <span>Hi, Admin</span>
+                </div>
+            </div>
+    </header>
+    <div class="container">
+        <h1>Find Previous Year Papers</h1>
+        <p>Search for previous year papers and memory-based papers by exam, subject, or subject code. Available in online and PDF formats.</p>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search by exam, subject, or subject code">
+            <button onclick="performSearch()">Search</button>
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById('search').value;
+            if (query.trim() === '') {
+                alert('Please enter a search term.');
+                return;
+            }
+            // Placeholder logic for search functionality
+            alert('Searching for: ' + query);
+        }
+    </script>
+</body>
+</html>

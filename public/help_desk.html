@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Help Center</title>
+    <link rel="stylesheet" href="help_desk.css">
+    <script src="help_desk.js" defer></script>
+</head>
+<body>
+    <div class="help-center">
+        <header>
+            <h1>Campus Help Center</h1>
+        </header>
+
+        <section class="requests">
+            <div class="requests-header">
+                <h2>Ongoing Requests</h2>
+                <button class="new-request-btn" onclick="openNewRequest()">+ New Request</button>
+            </div>
+
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody id="request-list">
+                    <tr class="empty-state">
+                        <td colspan="4">
+                            <div class="empty-icon">🔧</div>
+                            <p>All submitted and pending requests raised will be shown here.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="new-request" id="new-request-section" style="display: none;">
+            <h2>New Request</h2>
+            <input type="text" id="service-search" placeholder="Search service desk or service" oninput="filterServices()">
+            <ul class="services-list" id="services-list">
+                <li onclick="selectService('Accounts')">Accounts</li>
+                <li onclick="selectService('Examinations')">Examinations</li>
+                <li onclick="selectService('IT Department')">IT Department</li>
+                <li onclick="selectService('Euniv')">Euniv</li>
+                <li onclick="selectService('Transport Services')">Transport Services</li>
+                <li onclick="selectService('Hostel Services')">Hostel Services</li>
+                <li onclick="selectService('International Office')">International Office</li>
+                <li onclick="selectService('Health Centre Services')">Health Centre Services</li>
+                <li onclick="selectService('Library')">Library</li>
+                <li onclick="selectService('Registrar Office')">Registrar Office</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

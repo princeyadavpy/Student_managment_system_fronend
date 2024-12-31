@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossOrigin="anonymous" referrerPolicy="no-referrer">
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div id="nav-bar">
+        <input id="nav-toggle" type="checkbox">
+        <div id="nav-header">
+            <a id="nav-title" target="_blank">Menu</a>
+            <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+            <hr />
+        </div>
+        <div id="nav-content">
+            <div class="nav-button"><a href="dashboard.html"><i class="fas fa-palette"></i><span>Dashboard</span></a></div>
+            <div class="nav-button"><a href="admission.html"><i class="fas fa-school"></i><span>Admission</span></a></div>
+            <div class="nav-button"><a href="time_table.html"><i class="fas fa-clock"></i><span>Time Table</span></a></div>
+            <hr />
+            <div class="nav-button"><a href="attendance.html"><i class="fas fa-clipboard"></i><span>Attendance</span></a></div>
+            <div class="nav-button"><a href="payments.html"><i class="fas fa-inr"></i><span>Payment</span></a></div>
+            <div class="nav-button"><a href="library.html"><i class="fas fa-book"></i><span>Library</span></a></div>
+            <div class="nav-button"><a href="setting.html"><i class="fas fa-gear"></i><span>Settings</span></a></div>
+            <hr />
+            <div class="nav-button"><a href="office.html"><i class="fas fa-briefcase"></i><span>Fees Info</span></a></div>
+            <div id="nav-content-highlight"></div>
+        </div>
+        <input id="nav-footer-toggle" type="checkbox">
+        <div id="nav-footer">
+            <div id="nav-footer-heading">
+                <div id="nav-footer-avatar"><img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" alt="User Avatar"></div>
+                <div id="nav-footer-titlebox"><a id="nav-footer-title" target="_blank">St_Prince</a><span id="nav-footer-subtitle">Admin</span></div>
+                <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
+            </div>
+            <div id="nav-footer-content">
+                <p>Write your bio...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="time" id="time"></div>
+            <div class="user">
+                <img src="https://via.placeholder.com/30" alt="User Avatar">
+                <span>Hi, Admin</span>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard"></div>
+
+        <footer>
+            <div class="noticeboard">
+                <h2>Noticeboard</h2>
+                <p><i class="fas fa-bullhorn"></i> Holiday Notice</p>
+                <p>Dear Parent,</p>
+                <p>Today (24/10/2024) is a holiday for I-V classes.</p>
+                <p>Due to Raksha Bandhan</p>
+                <p>Thanks,</p>
+                <p>Principal</p>
+                <div class="date" id="date"></div>
+            </div>
+            <div class="calendar">
+                <h2>Calendar</h2>
+                <input type="text" placeholder="Select a date...">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Function to update time dynamically
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('time').textContent = timeString;
+        }
+
+        // Function to update date dynamically
+        function updateDate() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString();
+            document.getElementById('date').textContent = dateString;
+        }
+
+        // Function to create dashboard cards dynamically
+        function createDashboardCards() {
+            const dashboard = document.getElementById('dashboard');
+
+            const cardsData = [
+                { icon: 'fas fa-user', title: 'Student Admission', link: '/admission.html' },
+                { icon: 'fas fa-users', title: 'Teaching Staff', link: '/teacher.html' },
+                { icon: 'fas fa-users', title: 'Non Teaching Staff', link: '/non-teaching-staff' },
+                { icon: 'fas fa-file', title: 'Marks', link: '/marks' },
+                { icon: 'fas fa-check-circle', title: 'Student Daily Attendance', link: '/attendance.html' },
+                { icon: 'fas fa-check-circle', title: 'Staff Daily Attendance', link: '/staff-attendance' },
+                { icon: 'fas fa-money-bill-wave', title: 'Payment', link: '/payment' },
+                { icon: 'fas fa-book', title: 'Library', link: '/library' },
+                { icon: 'fas fa-calendar-alt', title: 'Class Routine', link: '/class-routine' },
+                { icon: 'fas fa-question-circle', title: 'Previous Question Papers', link: '/question-papers' },
+                { icon: 'fas fa-globe', title: 'Online Test', link: '/online-test' },
+                { icon: 'fas fa-envelope', title: 'Mail / SMS', link: 'mailto:princeyadav3033@gmail.com' },
+                { icon: 'fas fa-file', title: 'Noticeboard', link: '/noticeboard' },
+                { icon: 'fas fa-edit', title: 'Frontdesk Enquiry', link: '/frontdesk-enquiry' },
+                { icon: 'fas fa-flag', title: 'Things To Do', link: '/things-to-do' },
+                { icon: 'fas fa-building', title: 'Dormitory', link: '/dormitory' },
+            ];
+
+            cardsData.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+                const iconElement = document.createElement('i');
+                iconElement.className = card.icon;
+
+                const titleElement = document.createElement('h3');
+                titleElement.textContent = card.title;
+
+                // Add the anchor link for the card
+                const cardLink = document.createElement('a');
+                cardLink.href = card.link;
+                cardLink.appendChild(iconElement);
+                cardLink.appendChild(titleElement);
+
+                cardElement.appendChild(cardLink);
+                dashboard.appendChild(cardElement);
+            });
+        }
+
+        window.onload = () => {
+            updateTime();
+            updateDate();
+            createDashboardCards();
+            setInterval(updateTime, 1000); // Update time every second
+        };
+    </script>
+</body>
+</html>

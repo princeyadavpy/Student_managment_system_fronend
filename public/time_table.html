@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Timetable</title>
+  <link rel="stylesheet" href="time_table.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="content">
+        <div class="header">
+            <h1>Time-Table</h1>
+            <div class="time" id="time"></div>
+            <div class="user">
+                <img src="https://via.placeholder.com/30" alt="User Avatar">
+                <span>Hi, Admin</span>
+            </div>
+        </div>
+</header>
+
+<div class="container">
+  <div class="timetable">
+    <div class="day" onclick="showTimetable('monday')">Monday</div>
+    <div class="day" onclick="showTimetable('tuesday')">Tuesday</div>
+    <div class="day" onclick="showTimetable('wednesday')">Wednesday</div>
+    <div class="day" onclick="showTimetable('thursday')">Thursday</div>
+    <div class="day" onclick="showTimetable('friday')">Friday</div>
+    <div class="day" onclick="showTimetable('saturday')">Saturday</div>
+    <div class="day" onclick="showTimetable('sunday')">Sunday</div>
+  </div>
+
+  <!-- Timetable Details Section -->
+  <div id="timetable-details" class="timetable-details">
+    <h2 id="day-name">Select a Day</h2>
+    <ul id="class-schedule">
+      <!-- Class schedule will be dynamically updated here -->
+    </ul>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 Prince Yadav | All Rights Reserved
+</footer>
+
+<script src="time_table.js"></script>
+</body>
+</html>
